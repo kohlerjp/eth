@@ -8,7 +8,7 @@ defmodule Eth.Mixfile do
     [
       app: :eth,
       version: @version,
-      elixir: "~> 1.11",
+      elixir: "~> 1.10",
       description: description(),
       start_permanent: Mix.env() == :prod,
       package: package(),
@@ -32,10 +32,10 @@ defmodule Eth.Mixfile do
       {:ex_doc, ">= 0.23.0", only: :dev},
       {:dialyxir, "~> 1.0.0", only: [:dev], runtime: false},
       {:hexate, "~> 0.6.1"},
-      {:ex_keccak, "~> 0.1.2"},
+      {:ex_keccak, git: "git://github.com/kohlerjp/ex_keccak.git", branch: "master"},
       {:mnemonic, "~> 0.2.2"},
       {:poison, "~> 4.0.1"},
-      {:ex_secp256k1, "~> 0.1.2"},
+      {:ex_secp256k1, git: "git://github.com/kohlerjp/ex_secp256k1.git", branch: "master"},
       {:telemetry, "~> 0.4.2"}
     ]
   end
