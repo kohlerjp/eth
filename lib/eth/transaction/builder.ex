@@ -112,19 +112,7 @@ defmodule ETH.Transaction.Builder do
 
     nonce = Map.get(params, :nonce, generate_nonce(Map.get(params, :from)))
     chain_id = Map.get(params, :chain_id, 3)
-
-    gas_limit =
-      Map.get(
-        params,
-        :gas_limit,
-        ETH.estimate_gas!(%{
-          to: to,
-          value: value,
-          data: target_data,
-          nonce: nonce,
-          chain_id: chain_id
-        })
-      )
+    gas_limit = Map.get(params, :gas_limit)
 
     %{
       nonce: nonce,
